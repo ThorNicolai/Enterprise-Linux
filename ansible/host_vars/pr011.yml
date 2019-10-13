@@ -1,0 +1,230 @@
+---
+rhbase_firewall_allow_services:
+  - samba
+  - samba-client
+  - ftp
+
+samba_netbios_name: FILES
+samba_server_string: 'Welkom op de Samba-server'
+samba_workgroup: AVALON
+samba_load_homes: true
+samba_create_varwww_symlinks: true
+samba_shares_root: /srv/samba
+samba_load_printers: false
+
+#samba_create_varwww_symlinks: true
+rhbase_user_groups:
+  - management
+  - technical
+  - sales
+  - it
+  - public
+
+rhbase_users:
+  - name: alexanderd
+    comment: 'Alexander De Coninck'
+    groups:
+       - technical
+       - users
+    password: '$6$G.S6QQnyZoZoBBl9$MHM/u/6Zo0U1IoIKfCaGv1yF.f4GV.dIqThHahGERYfXyJix5dZQ5i75cHSrPx0RogRfaWR5FA4AmsDmpHIp.1'
+    shell: /sbin/nologin
+
+  - name: anc
+    comment: 'An Coppens'
+    groups:
+       - technical
+       - users
+    password: '$6$7FUVRzkNOXNFtXr9$pL0h4ja9SryCH8W.nGM1EPtM99tpSWMWQHQUWbYtyChHc8s.TkEbE5AinRf.qz3Ak43yj0V5YqNMMkH5yNPgQ0'
+    shell: /sbin/nologin
+
+  - name: benoitp
+    comment: 'Benoit Pluquet'
+    groups:
+       - sales
+       - users
+    password: '$6$MHhla0oiq3oWrGWD$QYDy/CRlMq31hzzLzrByII0YHz7fSc4aswm9KXkMcM2xz9Xv4VQ8/v95N8tkrKaz/LUYx5zy9tSBlclAYhxbC0'
+    shell: /sbin/nologin
+
+  - name: christophev
+    comment: 'Christophe Van der Meersche'
+    groups:
+       - it
+       - users
+    password: '$6$lM9Oft8ngY75r6B0$73oepGK0RmMXZ58NkXZJgOP/KGfGQGK/HtvpnichI0S4gNIuRwxGK3X//9VkfztXIkhp4Z12FpCJtjz5JOclF1'
+
+  - name: elenaa
+    comment: 'Elena Andreev'
+    groups:
+       - management
+       - users
+    password: '$6$Z5mUx6bYzxUnwPXQ$pN6LnB6G6KOtHnDycdtjKL48g04LsNo1NayIR3FWv17F21XHf8gBt39Jg0MJbCzR8ScGmchXNr1kjq7PPM14G0'
+    shell: /sbin/nologin
+
+  - name: evyt
+    comment: 'Evy Tilleman'
+    groups:
+       - technical
+       - users
+    password: '$6$3.f42Hc/aFUOg0np$CdZc5EfNlrN0db3af4DAVKpx37.5dS541JVpV10xCH7H9iool0r5ZMr8aRTVpIOG7nA2oNyeqvSMqwAUgsYQW1'
+    shell: /sbin/nologin
+
+  - name: krisv
+    comment: 'Kris Vanhaverbeke'
+    groups:
+       - management
+       - users
+    password: '$6$ZO1G5K0Z4L2I2F7/$PqgkV1hn9aShyQZTgbBhmHqJiOdCd5FcwOaSCRh0.cTAy6iFJbzbE8qmgTZRPjVKv1FHSarvg6ELl84O/dsMB0'
+    shell: /sbin/nologin
+
+  - name: leend
+    comment: 'Leen De Meester'
+    groups:
+       - technical
+       - users
+    password: '$6$iowGrTPnD072UrcZ$6Eum5ZEaqQD9d/Kius7K5eZPTty7.T0lAPlEtdpTTSBt1uMhvxG2EaL2kEkRqdTwYMNIUuv/iyDPSsAHN/Q.7/'
+    shell: /sbin/nologin
+
+  - name: nehirb
+    comment: 'Nehir Bauhuar'
+    groups:
+       - it
+       - users
+    password: '$6$0fLim/ransOBWdfe$CONwrduJGED2gr3R/NPch8LvHr1WudgKL1jkJfL2mOAyuVyFMGu0FIkb7hH9FGbS86ZJst3INWNYWS1cRjMpm/'
+
+  - name: stefaanv
+    comment: 'Stefaan Vernimmen'
+    groups:
+       - technical
+       - users
+    password: '$6$pmR8/sloq3nNlX.D$oaS1KypCCGOtUyzM4kIHz2cjFbBkjOo7gKKXBmx5w988txpqCGTU853sMvkYHtLe.H8RtOm46eN5MT5VsbZou.'
+    shell: /sbin/nologin
+
+  - name: stevenh
+    comment: 'Steven Hermans'
+    groups:
+       - management
+       - users
+    password: '$6$J98zGPGPVZKF9q97$XZXsAsYgf.41flGStRyXnilh0ZUIGlU2JPbk54SPS36md8ijWJ1QUwczTsUaKrFLIUQef6Kb48xqJVmtGJV3Y.'
+    shell: /sbin/nologin
+
+  - name: stevenv
+    comment: 'Steven Van Daele'
+    groups:
+       - technical
+       - users
+    password: '$6$wLmE.PkpFvlif/uh$ndrTjXbiHcSEI8u68XQMGHyNuPXzMW1ZFh.fS6MPZPwNYtHGxGQ7Vjx2QWB/ea8/IdKpS//BEzE4ubLJHG8rl.'
+    shell: /sbin/nologin
+
+  - name: svena
+    comment: 'Sven Arens'
+    groups:
+       - sales
+       - users
+    password: '$6$87qMtB0lYcAeSc5a$xZ.cCDWqKApakisaKVcOKfJBhvUb6hvD9T17Czlfp7MhTgCvUsrTSW/9T1/ECtEQgvf8d3fMKxPoIdG5NP6sW0'
+    shell: /sbin/nologin
+
+  - name: thor
+    comment: 'Administrator'
+    groups:
+       - wheel
+       - it
+       - users
+    password: '$6$.gbfAnV5BD/kLzoE$n3BGdzYtokPe/2JEjVS2IJWTh3TxHSfUw9U7CIBYgw9n79zntt7tPhZAwLkIBPN.sIXhJid1OupURNBqsaDSW0'
+
+samba_users:
+    - name: stevenh
+      password: stevenh
+    - name: stevenv
+      password: stevenv
+    - name: leend
+      password: leend
+    - name: svena
+      password: svena
+    - name: nehirb
+      password: nehirb
+    - name: alexanderd
+      password: alexanderd
+    - name: krisv
+      password: krisv
+    - name: benoitp
+      password: benoitp
+    - name: anc
+      password: anc
+    - name: elenaa
+      password: elenaa
+    - name: evyt
+      password: evyt
+    - name: christophev
+      password: christophev
+    - name: stefaanv
+      password: stefaanv
+    - name: thor
+      password: thor
+
+samba_shares:
+  - name: public
+    comment: 'A public share'
+    group: public
+    browsable: 'yes'
+    writeable: 'yes'
+    write_list: +public
+    valid_users: +public
+    create_mode: 775
+    directory_mode: 775
+    path: /srv/shares/public
+  - name: management
+    comment: 'Management share: inaccesible for all outside employees'
+    group: management
+    browsable: 'yes'
+    writeable: 'yes'
+    write_list: +management
+    valid_users: +management
+    create_mode: 770
+    directory_mode: 770
+    path: /srv/shares/management
+  - name: technical
+    comment: 'Techincal share: visible for employees outside their unit, but not writable'
+    group: technical
+    browsable: 'yes'
+    writeable: 'yes'
+    write_list: +technical
+    valid_users: +technical, +public
+    create_mode: 775
+    directory_mode: 775
+    path: /srv/shares/technical
+  - name: sales
+    comment: 'Sales share: visible to management but not writable'
+    group: sales
+    browsable: 'yes'
+    writeable: 'yes'
+    write_list: +sales
+    valid_users: +sales, +management
+    create_mode: 770
+    directory_mode: 770
+    path: /srv/shares/sales
+  - name: it
+    comment: 'IT share: visible to management but not writable'
+    group: it
+    browsable: 'yes'
+    writeable: 'yes'
+    write_list: +it
+    valid_users: +it, +management
+    create_mode: 770
+    directory_mode: 770
+    path: /srv/shares/it
+
+
+#samba_server_string: 'Welcome to the test file server'
+
+
+#vars:
+#    samba_global_include: global-include.conf
+
+
+#samba_log: /var/log/samba.log
+#samba_log_size: 60000
+#samba_log_level: '3 passdb:5 auth:10 winbind:2 '
+
+vsftpd_anonymous_enable: false
+vsftpd_local_enable: true
+vsftpd_local_root: /srv/shares

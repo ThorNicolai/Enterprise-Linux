@@ -1,0 +1,32 @@
+# group_vars/all.yml
+# Variables visible to all nodes
+# ww: W2Fwwff encrypted with:
+---
+ #Extra Packages for Enterprise Linux must be installed.
+rhbase_repositories:
+  - epel-release
+  #Install the following packagees on all servers.
+rhbase_install_packages:
+  - bash-completion
+  - bind-utils
+  - git
+  - nano
+  - tree
+  - vim-enhanced
+  - wget
+  #Create a user account for yourself, wheel ==> Administrator.
+rhbase_users:
+  - name: thor
+    comment: 'Administrator'
+    password: $6$Jbb65nwquGCLmTiT$.DP3sYbGxOZVBICbS57wUOg2wQdjtTWKaEPggp/NDGt7Gean.g6m1C/h38vzdOx.Tyx5yquMme/VDSTdSZUhI1
+    groups:
+      - wheel
+
+  #SSH USER.
+rhbase_ssh_user: thor
+
+  #SSH key pair generated and public key added to every server so you don't have to use a password.
+rhbase_ssh_key: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDOQiB9rU+Fll0CIW59/GTNECixSmqxvOyP8dnFQ/TL6xnYwioRHRl/roM1ezXJ23mqATByIhE4P0ZIY2tDfFU/AMeYBTgev7ULPgVl9uovPRsk49rOcU+gUr6g58WXAcUxl54I337dgy3sC0J0X9s1+nJxEjeoxcsrb5ZNRWGyQB9hR8ST9oiof1KHZGDNparjBWaJTXE+CGMPNC4ARfJIflJbQCkp4KGHb32a3Rj4GDWrWAqyKPViZAvI2SzkQzaX4gqTEe99BHdBhrR7Ob+LhsCr6FdlotTOCzKbY5ViLJCskNYC7ryoI9tNKiIF9IjvwVkZiM3EV3L+IBw4M84j nicol@ASUSS510'
+
+  #Enable message of the day to show network connection information.
+rhbase_motd: true

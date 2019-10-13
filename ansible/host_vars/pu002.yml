@@ -1,0 +1,14 @@
+---
+bind_listen_ipv4:
+    - any
+bind_allow_query:
+    - any
+bind_zone_master_server_ip: 192.0.2.10
+bind_zone_domains:
+  - name: avalon.lan
+    networks:
+      - '192.0.2'
+      - '172.16'
+
+rhbase_firewall_allow_services:
+ - dns

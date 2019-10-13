@@ -1,0 +1,39 @@
+#pu004
+---
+
+#Firewall
+rhbase_firewall_allow_services:
+  - http
+  - https
+
+#Mariadb
+mariadb_databases:
+  - name: thordb
+
+mariadb_root_password: 'W2Fwwf'
+
+mariadb_users:
+  - name: thor
+    password: W2Fwwff
+    priv: 'thordb.*:ALL,GRANT'
+
+#Wordpress
+wordpress_database: thordb
+
+wordpress_user: thor
+
+wordpress_password: W2Fwwff
+
+#Apache
+httpd_scripting: 'php'
+
+  #Verwijst naar het certificate dat in de files map zit.
+httpd_ssl_certificate_file: lamp.crt
+  #Verwijst naar de key die in de files map zit.
+httpd_ssl_certificate_key_file: lamp.key
+
+
+#fail2ban config
+fail2ban_bantime: 60
+fail2ban_findtime: 60
+fail2ban_maxretry: 5

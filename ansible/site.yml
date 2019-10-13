@@ -1,0 +1,89 @@
+# site.yml
+---
+- hosts: pu004 #WEB
+  become: true
+                    #Assign the needed roles for this VM
+  roles:
+    - bertvv.rh-base
+    - bertvv.mariadb
+    - bertvv.httpd
+    - bertvv.wordpress
+    - nbigot.fail2ban
+
+- hosts: pu001 #Primary DNS
+  become: true
+  roles:
+    - bertvv.rh-base
+    - bertvv.bind
+
+- hosts: pu002 #Secondary DNS
+  become: true
+  roles:
+    - bertvv.rh-base
+    - bertvv.bind
+
+- hosts: pr001 #DHCPSERVER
+  become: true
+  roles:
+    - bertvv.rh-base
+    - bertvv.dhcp
+
+- hosts: pr011 #FileServer
+  become: true
+  roles:
+    - bertvv.rh-base
+    - bertvv.samba
+    - bertvv.vsftpd
+                      #Create all the necessary shares, include the permissions per share.
+  post_tasks:
+    - name: ACL 4 Management
+      acl:
+        path: /srv/shares/management
+        entity: management
+        etype: group
+        permissions: r-x
+        state: present
+    - name: ACL 4 technical management
+      acl:
+        path: /srv/shares/technical
+        entity: sales
+        etype: group
+        permissions: r-x
+        state: present
+    - name: ACL 4 technical users
+      acl:
+        path: /srv/shares/technical
+        entity: it
+        etype: group
+        permissions: r-x
+        state: present
+    - name: ACL 4 technical management
+      acl:
+        path: /srv/shares/technical
+        entity: management
+        etype: group
+        permissions: r-x
+        state: present
+    - name: ACL 4 Sales
+      acl:
+        path: /srv/shares/sales
+        entity: management
+        etype: group
+        permissions: r-x
+        state: present
+    - name: ACL 4 IT
+      acl:
+        path: /srv/shares/it
+        entity: management
+        etype: group
+        permissions: r-x
+        state: present
+    - name: ACL 4 Public
+      acl:
+        path: /srv/shares/public
+        entity: users
+        etype: group
+        permissions: r-x
+        state: present
+    - name: Restart Vsftpd
+      shell: systemctl restart vsftpd
